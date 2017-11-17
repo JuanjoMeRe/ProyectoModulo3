@@ -1,0 +1,24 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Series DB</h1>
+    <p class="lead">Videogamescodex</p>
+</div>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Score</th>
+    </tr>
+     {% for name, score in games %}
+    <tr>
+       
+        <td>{{name}}</td>
+        <td>{{score}}</td>
+      
+    </tr>
+     {% endfor %}
+
+</table>
+{% endblock %}

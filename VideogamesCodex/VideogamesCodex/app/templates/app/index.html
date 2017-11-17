@@ -1,0 +1,31 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Series DB</h1>
+    <p class="lead">Videogamescodex</p>
+    <p><a href="/create/" class="btn btn-primary btn-large">NewGame</a></p>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>publisher</th>
+        <th>Genre</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for game in games %}
+    <tr>
+        <td>{{game.name}}</td>
+        <td>{{game.publisher}}</td>
+        <td>{{game.get_genre_display}}</td>
+        <td><a class="btn btn-success" href="/show/{{game.id}}">Show</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
+

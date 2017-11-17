@@ -1,0 +1,40 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Series DB</h1>
+    <p class="lead">Videogamescodex</p>
+    <p><a href="/New/" class="btn btn-primary btn-large">NewGame</a></p>
+</div>
+ <td><a class="btn btn-success" href="/edit/{{game.id}}">Edit</a></td>
+ <td><a onclick="return confirm('Delete this game?');"role="button" class="btn btn-danger"href="/remove/{{game.id}}">Remove</a></td>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>publisher</th>
+        <th>Year</th>
+        <th>Genre</th>
+        <th>Platform</th>
+        <th>Score</th>
+        <th>online</th>
+         <th>PEGI</th>
+    </tr>
+
+
+    <tr>
+        <td>{{game.name}}</td>
+        <td>{{game.publisher}}</td>
+        <td>{{game.year}}</td>
+        <td>{{game.get_genre_display}}</td>
+        <td>{{game.get_platform_display}}</td>
+        <td>{{game.score}}</td>
+        <td>{{game.online}}</td>
+        <td>{{game.pegi}}</td>
+
+       
+    </tr>
+    
+
+</table>
+{% endblock %}
